@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Auth.master.cs" Inherits="MarketPriceTracker.Auth" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Market Price Tracker</title>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <style>
+        html, body { height: 100%; }
+        body { background: #eef3ff; min-height: 100vh; display: flex; flex-direction: column; }
+        form { display: flex; flex-direction: column; flex: 1; }
+
+        /* Blue header, logo on the left */
+        .auth-header { background: #4070f4; padding: 18px 40px; }
+        .auth-brand {
+            color: #fff; font-size: 2rem; font-weight: 700;
+            letter-spacing: .5px; text-decoration: none;
+        }
+
+        /* Centers the box in the middle of the page */
+        .auth-main {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            padding: 24px;
+        }
+
+        /* Bigger login/signup box */
+        .auth-card {
+            width: 100%; max-width: 520px; background: #fff;
+            border-radius: 16px; padding: 40px 44px;
+            box-shadow: 0 10px 30px rgba(64, 112, 244, .2);
+        }
+        .auth-card h3 { font-size: 1.9rem; font-weight: 700; }
+        .auth-card input, .auth-card select, .auth-card textarea { max-width: 100%; }
+        .auth-card .form-control { padding: 12px 14px; font-size: 1.05rem; }
+        .auth-card .btn { padding: 12px; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="auth-header">
+            <span class="auth-brand"><i class="bi bi-graph-up-arrow"></i> MARKET PRICE TRACKER</span>
+        </header>
+
+        <div class="auth-main">
+            <div class="auth-card">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>
